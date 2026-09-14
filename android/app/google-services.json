@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "977266622318",
+    "project_id": "quipu-test-c8408",
+    "storage_bucket": "quipu-test-c8408.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977266622318:android:6ec09134df59736f0dcb7f",
+        "android_client_info": {
+          "package_name": "com.quiputest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEW-Da1RJFRNVmS7V_MBQrLaOEGuTdUSU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
