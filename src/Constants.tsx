@@ -4,6 +4,6 @@ export const CONSTANTS = {
     SIGN_IN: 'Sign In Screen',
     SIGN_UP: 'Sign Up Screen',
     MAIN_APP: 'Main App Screen',
-    PROFILE: 'Profile Screen',
+    PROFILE: 'User Profile',
   },
 }

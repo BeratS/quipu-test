@@ -63,10 +63,10 @@ export default function SignUpScreen(): React.JSX.Element {
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
         <ScrollView
-          contentContainerStyle={globalStyles.container}
+          contentContainerStyle={[globalStyles.containerNoColor, globalStyles.containerGrow]}
           keyboardShouldPersistTaps="handled"
         >
-          <Text style={globalStyles.title}>Create Account</Text>
+          <Text style={globalStyles.title}>Create Quipu Account</Text>
 
           {/* Email Input */}
           <View style={globalStyles.inputGroup}>
@@ -142,7 +142,7 @@ export default function SignUpScreen(): React.JSX.Element {
             disabled={isSubmitting}
           >
             {isSubmitting ? (
-              <ActivityIndicator color="#fff" />
+              <ActivityIndicator color={colors.white} />
             ) : (
               <Text style={globalStyles.buttonText}>Sign Up</Text>
             )}

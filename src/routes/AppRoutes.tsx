@@ -29,7 +29,6 @@ const AppRoutes: React.FC = () => {
         component={ProfileScreen}
         options={({}) => ({
           headerBackVisible: true,
-          // headerTitle: () => <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Profile</Text>,
         })}
       />
     </AppStack.Navigator>

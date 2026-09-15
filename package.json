@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage --watchAll=false"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",
@@ -52,5 +53,24 @@
   },
   "engines": {
     "node": ">= 22.11.0"
+  },
+  "jest": {
+    "preset": "react-native",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts",
+      "!src/**/styles.ts",
+      "!**/node_modules/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    },
+    "coverageReporters": ["text", "lcov", "html"]
   }
 }

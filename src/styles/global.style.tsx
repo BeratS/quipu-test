@@ -12,6 +12,11 @@ export const createStyles = (colors: any) =>
       padding: 24,
     },
 
+    containerNoColor: {
+      flex: 1,
+      padding: 24,
+    },
+
     containerGrow: {
       flexGrow: 1,
       justifyContent: 'center',
@@ -73,5 +78,43 @@ export const createStyles = (colors: any) =>
       color: colors.white,
       fontSize: 16,
       fontWeight: 'bold',
+    },
+
+    avatar: {
+      width: 90,
+      height: 90,
+      borderRadius: 45,
+      backgroundColor: colors.white,
+      justifyContent: 'center',
+      alignItems: 'center',
+      alignSelf: 'center',
+      marginVertical: 30,
+    },
+
+    avatarText: {
+      fontSize: 36,
+      fontWeight: '700',
+      color: colors.textSecondary,
+    },
+
+    // Card styles
+
+    card: {
+      backgroundColor: 'rgba(255, 255, 255, 0.9)',
+      borderRadius: 12,
+      padding: 16,
+      marginBottom: 14,
+    },
+
+    cardLabel: {
+      fontSize: 13,
+      color: '#777',
+      marginBottom: 5,
+    },
+
+    cardValue: {
+      fontSize: 16,
+      fontWeight: '600',
+      color: '#222',
     },
   });

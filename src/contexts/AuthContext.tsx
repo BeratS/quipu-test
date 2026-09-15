@@ -2,7 +2,7 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  signOut,
+  signOut as userSignOut,
   User,
   UserCredential
 } from '@react-native-firebase/auth';
@@ -15,7 +15,7 @@ interface AuthContextType {
   loading: boolean;
   signUp: (email: string, password: string) => Promise<UserCredential>;
   signIn: (email: string, password: string) => Promise<UserCredential>;
-  logout: () => Promise<void>;
+  signOut: () => Promise<void>;
 }
 
 export const AuthContext = createContext<AuthContextType>({} as AuthContextType);
@@ -42,8 +42,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const logout = () => {
-    return signOut(auth);
+  const signOut = () => {
+    return userSignOut(auth);
   };
 
   return (
@@ -53,7 +53,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         loading,
         signUp,
         signIn,
-        logout
+        signOut
       }}>
       {children}
     </AuthContext.Provider>

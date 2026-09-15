@@ -18,9 +18,9 @@ import LinearGradient from 'react-native-linear-gradient';
 import { CONSTANTS } from '../../Constants';
 import { useAppStyle } from '../../hooks/useAppColors';
 import { useAuth } from '../../hooks/useAuth';
-import { LoginFormData, loginSchema } from '../../utils/validations';
+import { SignInFormData, signInSchema } from '../../utils/validations';
 
-export default function LoginScreen(): React.JSX.Element {
+export default function SignInScreen(): React.JSX.Element {
   const navigation = useNavigation<NavStackType>();
   const { signIn } = useAuth();
   const { styles: globalStyles, colors } = useAppStyle();
@@ -29,19 +29,19 @@ export default function LoginScreen(): React.JSX.Element {
     control,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<LoginFormData>({
-    resolver: zodResolver(loginSchema),
+  } = useForm<SignInFormData>({
+    resolver: zodResolver(signInSchema),
     defaultValues: {
       email: '',
       password: '',
     },
   });
 
-  const onSubmit = async (data: LoginFormData) => {
+  const onSubmit = async (data: SignInFormData) => {
     try {
       await signIn(data.email, data.password);
     } catch (error: any) {
-      Alert.alert('Login Failed', error.message || 'An error occurred during sign in.');
+      Alert.alert('Sign In Failed', error.message || 'An error occurred during sign in.');
     }
   };
 
@@ -61,7 +61,7 @@ export default function LoginScreen(): React.JSX.Element {
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
         <ScrollView
-          contentContainerStyle={[globalStyles.container, globalStyles.containerGrow]}
+          contentContainerStyle={[globalStyles.containerNoColor, globalStyles.containerGrow]}
           keyboardShouldPersistTaps="handled"
         >
           <Text style={globalStyles.title}>Welcome to Quipu App</Text>
