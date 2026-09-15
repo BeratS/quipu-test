@@ -5,23 +5,28 @@
  * @format
  */
 
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar, useColorScheme } from 'react-native';
 import {
   SafeAreaProvider
 } from 'react-native-safe-area-context';
-import Routes from './routes';
 import { AuthProvider } from './contexts/AuthContext';
+import Routes from './routes';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <AuthProvider>
-      <SafeAreaProvider>
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        <Routes />
-      </SafeAreaProvider>
-    </AuthProvider>
+    <SafeAreaProvider>
+      <AuthProvider>
+        <NavigationContainer>
+          <StatusBar barStyle={
+            isDarkMode ? 'light-content' : 'dark-content'
+          } />
+          <Routes />
+        </NavigationContainer>
+      </AuthProvider>
+    </SafeAreaProvider>
   );
 }
 
