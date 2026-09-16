@@ -7,7 +7,7 @@ import SignUpScreen from '../screens/Auth/SignUpScreen';
 
 const AuthStack = createNativeStackNavigator();
 
-const AuthRoutes: React.FC = () => (
+const AuthRoutes = () => (
   <AuthStack.Navigator>
     {/* Sign In Screen Stack */}
     <AuthStack.Screen

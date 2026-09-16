@@ -3,12 +3,25 @@ import { Alert } from 'react-native';
 interface AlertProps {
     title: string;
     message: string;
-    actionFn: () => void;
+    buttonText?: string;
+    actionFn?: () => void;
 }
 
 export const useAlert = () => {
 
-    const showAlert = ({ title, message, actionFn }: AlertProps) => {
+    const showAlert = ({
+        title,
+        message,
+        buttonText = 'Delete',
+        actionFn
+    }: AlertProps) => {
+        if (!actionFn) {
+            return Alert.alert(
+                title,
+                message,
+            )
+        }
+
         Alert.alert(
             title,
             message,
@@ -18,7 +31,7 @@ export const useAlert = () => {
                     style: 'cancel',
                 },
                 {
-                    text: 'Sign Out',
+                    text: buttonText,
                     style: 'destructive',
                     onPress: actionFn,
                 },

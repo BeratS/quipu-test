@@ -21,6 +21,7 @@ export default function ProfileScreen(): React.JSX.Element {
     showAlert({
       title: 'Sign Out',
       message: 'Are you sure you want to sign out?',
+      buttonText: 'Sign Out',
       actionFn: async () => {
         try {
           await signOut();

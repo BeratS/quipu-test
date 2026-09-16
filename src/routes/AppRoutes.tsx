@@ -9,7 +9,7 @@ import ProfileScreen from '../screens/ProfileScreen';
 
 const AppStack = createNativeStackNavigator();
 
-const AppRoutes: React.FC = () => {
+const AppRoutes = () => {
   return (
     <AppStack.Navigator>
       {/* Main App Screen */}

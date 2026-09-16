@@ -2,6 +2,10 @@ import { StyleSheet } from 'react-native';
 
 export const createStyles = (colors: any) =>
   StyleSheet.create({
+    fullView: {
+      flex: 1,
+    },
+
     keyboardView: {
       flex: 1,
     },
@@ -20,6 +24,13 @@ export const createStyles = (colors: any) =>
     containerGrow: {
       flexGrow: 1,
       justifyContent: 'center',
+    },
+
+    header: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginBottom: 16,
     },
 
     title: {
@@ -126,7 +137,7 @@ export const createStyles = (colors: any) =>
     // Card styles
 
     card: {
-      backgroundColor: 'rgba(255, 255, 255, 0.9)',
+      backgroundColor: colors.card,
       borderRadius: 12,
       padding: 16,
       marginBottom: 14,
@@ -134,13 +145,126 @@ export const createStyles = (colors: any) =>
 
     cardLabel: {
       fontSize: 13,
-      color: '#777',
+      color: colors.cardLabel,
       marginBottom: 5,
     },
 
     cardValue: {
       fontSize: 16,
       fontWeight: '600',
-      color: '#222',
+      color: colors.cardValue,
+    },
+
+    /* ------------ CALENDAR ------------ */
+
+    calendar: {
+      backgroundColor: colors.white,
+      borderRadius: 12,
+      padding: 16,
+      elevation: 3,
+      shadowColor: colors.black,
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.1,
+      shadowRadius: 6,
+    },
+
+    calendarMonthText: {
+      fontSize: 18,
+      fontWeight: '700',
+      color: colors.calendarMonthText,
+    },
+
+    calendarNavButton: {
+      paddingHorizontal: 12,
+      paddingVertical: 4,
+    },
+
+    calendarNavText: {
+      fontSize: 26,
+      fontWeight: '600',
+    },
+
+    calendarWeekRow: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      marginBottom: 8,
+    },
+
+    calendarWeekDayText: {
+      width: '14.28%',
+      textAlign: 'center',
+      fontSize: 13,
+      fontWeight: '600',
+      color: colors.textMuted,
+    },
+
+    calendarDaysGrid: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+    },
+
+    calendarDayCellContainer: {
+      width: '14.28%',
+      aspectRatio: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginVertical: 2,
+    },
+
+    calendarDayCell: {
+      width: 36,
+      height: 36,
+      borderRadius: 18,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+
+    calendarDayText: {
+      fontSize: 14,
+      fontWeight: '700',
+      color: colors.textSecondary,
+    },
+
+    calendarText: {
+      color: colors.textMuted,
+    },
+
+    calendarSelectedText: {
+      color: colors.white,
+      fontWeight: '700',
+    },
+
+    /* ------------ MODAL ------------ */
+    modalOverlay: {
+      flex: 1,
+      justifyContent: 'flex-end',
+      backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    },
+
+    modalBackdrop: {
+      ...StyleSheet.absoluteFill,
+    },
+
+    modalSheetContainer: {
+      backgroundColor: colors.white,
+    },
+
+    dragHandleContainer: {
+      paddingVertical: 12,
+      alignItems: 'center',
+    },
+
+    dragHandle: {
+      width: 40,
+      height: 5,
+      backgroundColor: colors.surface,
+      borderRadius: 3,
+      marginBottom: 10,
+    },
+
+    modalHeaderTitle: {
+      fontSize: 16,
+      fontWeight: '600',
+      color: colors.calendarMonthText,
     },
   });

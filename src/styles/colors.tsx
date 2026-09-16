@@ -5,7 +5,7 @@ export const lightColors = {
   background: '#F7F8FA',
   surface: '#FFFFFF',
 
-  text: '#1A1A1A',
+  text: '#111827',
   textSecondary: '#333333',
   textMuted: '#666666',
 
@@ -18,6 +18,18 @@ export const lightColors = {
 
   white: '#FFFFFF',
   black: '#000000',
+
+  card: 'rgba(255, 255, 255, 0.9)',
+  cardLabel: '#777777',
+  cardValue: '#222222',
+
+  placeholder: '#9CA3AF',
+  calendarMonthText: '#1F2937',
+
+  bookedBlock: '#F0F4F9',
+  bookedDarkBlock: '#D3E3FD',
+
+  disabledBackground: '#E0E0E0',
 
   gradient: ['#EAF4FF', '#F7F8FA'],
 };
@@ -42,6 +54,18 @@ export const darkColors = {
 
   white: '#FFFFFF',
   black: '#000000',
+
+  card: 'rgba(0, 0, 0, 0.9)',
+  cardLabel: '#d4d4d4',
+  cardValue: '#919191',
+
+  placeholder: '#4d5157',
+  calendarMonthText: '#667c9c',
+
+  bookedBlock: '#525558',
+  bookedDarkBlock: '#434446',
+
+  disabledBackground: '#303030',
 
   gradient: ['#071A2E', '#121212'],
 };

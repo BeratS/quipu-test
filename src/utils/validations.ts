@@ -31,3 +31,22 @@ export const signUpSchema = z
   });
 
 export type SignUpFormData = z.infer<typeof signUpSchema>;
+
+/**
+ * ----------------- CREATE SLOT MEETING SCHEMA -----------------
+ */
+export const createSlotMeetingSchema = z.object({
+  title: z
+    .string()
+    .min(1, 'Meeting title is required')
+    .min(3, 'Title must be at least 3 characters'),
+  description: z.string().optional(),
+  date: z.date({
+    error: 'Please select a date',
+  }),
+  hour: z.string({
+    error: 'Please select a time slot',
+  }).min(1, 'Time slot is required'),
+});
+
+export type CreateSlotMeetingFormData = z.infer<typeof createSlotMeetingSchema>;
