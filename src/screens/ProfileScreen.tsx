@@ -19,7 +19,7 @@ export default function ProfileScreen(): React.JSX.Element {
 
   const handleSignOut = async () => {
     showAlert({
-      title: 'signOutButton',
+      title: 'Sign Out',
       message: 'Are you sure you want to sign out?',
       actionFn: async () => {
         try {
@@ -71,6 +71,7 @@ export default function ProfileScreen(): React.JSX.Element {
           style={[globalStyles.button, styles.signOutButton, !signed && globalStyles.buttonDisabled]}
           onPress={handleSignOut}
           disabled={!signed}
+          accessibilityRole="button"
           activeOpacity={0.7}
         >
           {!signed ? (
