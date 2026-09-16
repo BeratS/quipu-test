@@ -4,7 +4,7 @@ import AppBiometricsUI from '../components/AppBiometricsUI';
 import { useAuth } from '../hooks/useAuth';
 import AppRoutes from './AppRoutes';
 import AuthRoutes from './AuthRoutes';
-import SplashAnimation from './SplashAnimation';
+import SplashAnimation from './SplashScreen';
 
 const Routes = () => {
   const { signed, loading, isBiometricsAvailable, isBiometricAuthEnabled, signOut, unlockWithBiometrics } = useAuth();
