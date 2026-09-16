@@ -30,6 +30,13 @@ export const createStyles = (colors: any) =>
       color: colors.text,
     },
 
+    subtitle: {
+      fontSize: 14,
+      color: colors.textMuted,
+      textAlign: 'center',
+      marginBottom: 24,
+    },
+
     inputGroup: {
       marginBottom: 16,
     },
@@ -62,12 +69,31 @@ export const createStyles = (colors: any) =>
       marginTop: 4,
     },
 
+    // Button styles ---------------------------------
+
     button: {
       backgroundColor: colors.primary,
       paddingVertical: 14,
       borderRadius: 8,
       alignItems: 'center',
       marginTop: 12,
+    },
+
+    buttonOutline: {
+      backgroundColor: colors.white,
+      borderWidth: 1,
+      borderColor: colors.primary,
+      paddingVertical: 14,
+      borderRadius: 8,
+      alignItems: 'center',
+      marginTop: 12,
+    },
+
+    buttonGhost: {
+      color: colors.primary,
+      paddingVertical: 14,
+      borderRadius: 8,
+      alignItems: 'center',
     },
 
     buttonDisabled: {

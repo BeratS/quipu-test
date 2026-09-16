@@ -30,6 +30,15 @@ npm run android
 
 # OR using Yarn
 yarn android
+
+# NoCache
+npx react-native start --reset-cache
+
+# Log debug
+npx react-native log-android
+
+# Doctor Check
+npx react-native doctor 
 ```
 
 ### iOS

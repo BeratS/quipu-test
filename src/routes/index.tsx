@@ -1,20 +1,31 @@
 import React from 'react';
 
+import AppBiometricsUI from '../components/AppBiometricsUI';
+import { useAuth } from '../hooks/useAuth';
 import AppRoutes from './AppRoutes';
 import AuthRoutes from './AuthRoutes';
 import SplashAnimation from './SplashAnimation';
-import { useAuth } from '../hooks/useAuth';
 
 const Routes = () => {
-  const { signed, loading } = useAuth();
+  const { signed, loading, isBiometricsAvailable, isBiometricAuthEnabled, signOut, unlockWithBiometrics } = useAuth();
 
   if (loading) {
-    return (
-      <SplashAnimation />
-    );
+    // show some loading indicator
+    return <SplashAnimation />
   }
 
-  return signed ? <AppRoutes /> : <AuthRoutes />;
+  // When user need to sign in through firebase
+  if (!signed) {
+    return <AuthRoutes />;
+  }
+
+  // Check Here biometrics after user is signed in
+  if (isBiometricsAvailable && isBiometricAuthEnabled) {
+    return <AppBiometricsUI {...{signOut, unlockWithBiometrics}} />
+  }
+
+  // User is signed in with both firebase and biometrics
+  return <AppRoutes />;
 };
 
 export default Routes;
